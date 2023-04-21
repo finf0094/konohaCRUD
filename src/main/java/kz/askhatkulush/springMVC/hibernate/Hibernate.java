@@ -42,6 +42,19 @@ public class Hibernate {
         }
     }
 
+    public Heroes getHero(int id) {
+        Session session = factory.getCurrentSession();
+        try {
+            session.beginTransaction();
+            return session.get(Heroes.class, id);
+        }catch (Exception e) {
+            e.printStackTrace();
+        } finally {
+            session.close();
+        }
+        return null;
+    }
+
     public ArrayList<Heroes> getHeroes() {
         Session session = factory.getCurrentSession();
         try {
@@ -57,4 +70,5 @@ public class Hibernate {
         }
         return null;
     }
+
 }

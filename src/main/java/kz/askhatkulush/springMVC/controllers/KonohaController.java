@@ -27,12 +27,12 @@ public class KonohaController {
 
     }
 
-//    @RequestMapping("/{id}")
-//    public String getHero(Model model, @PathVariable("id") int id) {
-//        model.addAttribute("hero", heroesDAO.getHero(id));
-//
-//        return "konoha/hero";
-//    }
+    @RequestMapping("/{id}")
+    public String getHero(Model model, @PathVariable("id") int id) {
+        model.addAttribute("hero", hibernate.getHero(id));
+
+        return "konoha/hero";
+    }
 
 //    @RequestMapping("/hokage")
 //    public String getHokage(Model model) {
